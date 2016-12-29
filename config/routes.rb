@@ -1,10 +1,10 @@
   Rails.application.routes.draw do
 
   resources :games
-      root 'static_pages#home'
+      root 'games#index'
          
-       get  '/home',    to: 'static_pages#home'
-      get  '/help',    to: 'static_pages#help'
+       get  '/home',    to: 'games#index'
+      get  '/add',    to: 'games#new'
       get  '/about',   to: 'static_pages#about'
       get  '/contact', to: 'static_pages#contact'
       get  '/signup',  to: 'users#new'

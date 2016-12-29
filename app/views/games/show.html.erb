@@ -1,5 +1,4 @@
-<p id="notice"><%= notice %></p>
-
+<%= image_tag @game.image.url %>
 <p>
   <strong>Name:</strong>
   <%= @game.name %>
@@ -25,5 +24,9 @@
   <%= @game.age_group %>
 </p>
 
+<p>
+  <strong>Posted by:</strong>
+  <%= @game.user.name %>
+</p>
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

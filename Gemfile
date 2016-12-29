@@ -10,7 +10,8 @@ source 'http://rubygems.org'
     gem 'turbolinks',   '5.0.0'
     gem 'jbuilder',     '2.4.1'
     gem 'bootstrap-sass',    '3.3.6' 
-
+    gem 'paperclip', '~> 5.1'
+    gem 'cocaine', '~> 0.5.8'
     group :development, :test do
       gem 'sqlite3', '1.3.11'
       gem 'byebug',  '9.0.0', platform: :mri

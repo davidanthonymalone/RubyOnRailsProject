@@ -1,6 +1,5 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
-before_action :logged_in_user, only: [:create, :destroy]
 
   # GET /games
   # GET /games.json
@@ -70,6 +69,6 @@ before_action :logged_in_user, only: [:create, :destroy]
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:name, :about, :price, :rating, :age_group)
+      params.require(:game).permit(:name, :about, :price, :rating, :age_group, :image)
     end
 end
