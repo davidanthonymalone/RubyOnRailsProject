@@ -9,7 +9,10 @@
         
     }
 
-
+.image-size {
+  max-width: 100px;
+  max-height: 100px;
+}
     section {
       overflow: auto;
     }
@@ -115,11 +118,7 @@ footer {
       margin-top: 45px;
       @include box_sizing;
     }
-image{
-   
-  max-width: 100px;
-  max-height: 100px;
-
+#image{
     
 }
 

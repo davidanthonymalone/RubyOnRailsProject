@@ -5,7 +5,9 @@
                 </br>
             </br>
                      <td><h1><%= @game.name %></h1</td>
+                <div id="image">
                 <%= image_tag  @game.image.url %>
+                         </div>
                 <div class="table-responsive">
                     <table class="table">
                         <tbody>
@@ -55,8 +57,12 @@
           <% @reviews.each do |review| %>
             <div class="reviews">
               <div class="star-rating" data-score= <%= review.rating %> ></div>
-                 <p><strong><%= review.user.name %></strong></p>
-              <p><%= review.comment %></p>
+            <p><strong><%= review.user.name %></strong></p>
+                 <div class="reviews">
+              <div class="star-rating" data-score= <%= review.rating %> ></div>
+                            <p><%= review.comment %></p>
+                </div>
+
                 <hr>
                 </hr>
                 
@@ -71,6 +77,15 @@
 
 
 
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>
 
 
 

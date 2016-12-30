@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+<p><h1>Add a New Game</h1></p>
 
   <div class="field">
     <%= f.label :name %>
@@ -28,7 +29,7 @@
 
   <div class="field">
     <%= f.label :rating %>
-    <%= f.text_field :rating %>
+    <%= f.select :age_group, ['1', '2', '3', '4', '5']%>
   </div>
 
   <div class="field">

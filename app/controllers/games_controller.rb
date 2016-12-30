@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
-
+    
   # GET /games
   # GET /games.json
   def index
@@ -15,9 +15,13 @@ class GamesController < ApplicationController
 
   # GET /games/new
   def new
+   if logged_in? 
     @game = current_user.games.build
+       else
+       redirect_to root_url
+       
   end
-
+  end
   # GET /games/1/edit
   def edit
   end
