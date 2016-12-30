@@ -1,6 +1,7 @@
     class User < ApplicationRecord
                 before_save { self.email = email.downcase }
          has_many :games, dependent: :destroy 
+        has_many :reviews, dependent: :destroy
       attr_accessor :remember_token
       validates :name, presence: true, length: { in: 9..30 }
       VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
