@@ -1,32 +1,55 @@
-<%= image_tag @game.image.url %>
-<p>
-  <strong>Name:</strong>
-  <%= @game.name %>
-</p>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                </br>
+                     <td><h1><%= @game.name %></h1</td>
+                <%= image_tag @game.image.url %>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td><strong>Name</strong></td>
+                                <td><%= @game.name %></td>
+                            
+                            </tr>
+                             <tr>
+                                <td><strong>About</strong></td>
+                                <td><%= @game.about %></td>
+                            
+                            </tr>
+                            <tr>
+                                <td><strong>Price</strong></td>
+                                <td><%= @game.price %></td>
+                            
+                            </tr>
+                            <tr>
+                                <td><strong>Rating</strong></td>
+                                <td><%= @game.rating %></td>
+                            
+                            </tr>
+                             <tr>
+                                <td><strong>Age Group</strong></td>
+                                <td><%= @game.age_group %></td>
+                            
+                            </tr>
+                            <tr>
+                                <td><strong>Posted by:</strong></td>
+                                <td><%= @game.user.name %></td>
+                            
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
 
-<p>
-  <strong>About:</strong>
-  <%= @game.about %>
-</p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @game.price %>
-</p>
 
-<p>
-  <strong>Rating:</strong>
-  <%= @game.rating %>
-</p>
 
-<p>
-  <strong>Age group:</strong>
-  <%= @game.age_group %>
-</p>
 
-<p>
-  <strong>Posted by:</strong>
-  <%= @game.user.name %>
-</p>
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+
+
