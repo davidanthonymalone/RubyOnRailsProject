@@ -1,7 +1,8 @@
   Rails.application.routes.draw do
 
-  resources :reviews
-  resources :games
+  resources :games do
+        resources :reviews
+  end
       root 'games#index'
          
        get  '/home',    to: 'games#index'
