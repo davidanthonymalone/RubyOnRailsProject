@@ -1,10 +1,11 @@
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-10">
                 </br>
+            </br>
                      <td><h1><%= @game.name %></h1</td>
-                <%= image_tag @game.image.url %>
+                <%= image_tag  @game.image.url %>
                 <div class="table-responsive">
                     <table class="table">
                         <tbody>
@@ -43,6 +44,26 @@
                     <%= link_to "Write a Review of this game", new_game_review_path(@game) %>
                 </div>
             </div>
+                         <div class="col-md-7 cold-md-offset-1">
+                             <h1 class="review_title">Reviews</h1>
+                             
+                             
+                            <% if @reviews.blank? %>
+          <h3>No reviews just yet, would you like to add the first!</h3>
+          <%= link_to "Write Review", new_game_review_path(@game), class: "btn btn-danger" %>
+        <% else %>
+          <% @reviews.each do |review| %>
+            <div class="reviews">
+              <div class="star-rating" data-score= <%= review.rating %> ></div>
+                 <p><strong><%= review.user.name %></strong></p>
+              <p><%= review.comment %></p>
+                <hr>
+                </hr>
+                
+            </div>
+          <% end %>
+        <% end %>
+                             <%= link_to 'Back', root_path(@game) %>
         </div>
         
     </div>

@@ -5,9 +5,10 @@
 
     body {
       padding-top: 20px;
-        background: #AA4847;
+        background: #D4B090;
         
     }
+
 
     section {
       overflow: auto;
@@ -114,6 +115,13 @@ footer {
       margin-top: 45px;
       @include box_sizing;
     }
+image{
+   
+  max-width: 100px;
+  max-height: 100px;
+
+    
+}
 
 aside {
       section.user_info {
