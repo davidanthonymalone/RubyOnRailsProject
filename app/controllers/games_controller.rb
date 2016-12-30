@@ -18,7 +18,8 @@ class GamesController < ApplicationController
    if logged_in? 
     @game = current_user.games.build
        else
-       redirect_to root_url
+     redirect_to root_url, notice: "Please Login before you can add a movie"
+       
        
   end
   end
