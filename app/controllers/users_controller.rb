@@ -16,7 +16,7 @@
         if @user.save
              remember @user       #  NEW LINE
       flash[:success] = "Welcome to the games emporium!"    # NEW LINE
-           redirect_to @game
+           redirect_to @user
         else
  render 'new' 
         end

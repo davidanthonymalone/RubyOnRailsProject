@@ -55,11 +55,10 @@
           <%= link_to "Write Review", new_game_review_path(@game), class: "btn btn-danger" %>
         <% else %>
           <% @reviews.each do |review| %>
-            <div class="reviews">
-              <div class="star-rating" data-score= <%= review.rating %> ></div>
+            
             <p><strong><%= review.user.name %></strong></p>
                  <div class="reviews">
-              <div class="star-rating" data-score= <%= review.rating %> ></div>
+              <div class="star-rating",  data-score= <%= review.rating %> ></div>
                             <p><%= review.comment %></p>
                 </div>
 
