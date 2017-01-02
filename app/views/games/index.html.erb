@@ -1,43 +1,29 @@
-<p id="notice"><%= notice %></p>
-</br>
-</br>
-</br>
-
-<h1>Games that are on the site to be reviewed</h1>
-<div class="table-responsive">
- <table class="table">
- <tbody>
-
-    <tr>
-      <th>Name - </th>
-      <th>About - </th>
-      <th>Price - </th>
-      <th>Rating - </th>
-      <th>Age group - </th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= game.name %>    </td>
-        <td><%= game.about %></td>
-        <td><%= game.price %></td>
-        <td><%= game.rating %></td>
-        <td><%= game.age_group %></td>
+<% if !logged_in? %>
+<div class="row">
+<div class="jumbotron">
     </br>
-    
-    
-    
-        <td><%= link_to 'Show |', game %></td>
-        <td><%= link_to 'Edit |', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy ', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
-<br>
+    </br>
+</br>
+ </br>
+    </br>
+</br> </br>
+    </br>
+</br>
+    <h1>Please sign in if you would like to add games</h1>
+    <p>Hashtag hoodie mumblecore selfies. Authentic keffiyeh leggings Kickstarter, narwhal jean shorts XOXO Vice Austin cardigan. Organic drinking vinegar freegan pickled.</p>
+   </p>
+  </div>
+<% end %>
+    </br>
+</br>
 
-<%= link_to 'New Game', new_game_path %>
+
+  <% @games.each do |game| %>
+ 
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= link_to (image_tag game.image.url, class: 'image'), game %>
+      </div>
+    </div>
+  <% end %>
+</div>
