@@ -1,96 +1,104 @@
-<div class="panel panel-default">
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-md-10">
-             
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-7">
 
-                     <td><h1><%= @game.name %></h1</td>
-                <div id="image">
-                <%= image_tag  @game.image.url %>
-                         </div>
-                <div class="table-responsive">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td><strong>Name</strong></td>
-                                <td><%= @game.name %></td>
-                            
-                            </tr>
-                             <tr>
-                                <td><strong>About</strong></td>
-                                <td><%= @game.about %></td>
-                            
-                            </tr>
-                            <tr>
-                                <td><strong>Price</strong></td>
-                                <td><%= @game.price %></td>
-                            
-                            </tr>
-                            <tr>
-                                <td><strong>Rating</strong></td>
-                                <td><%= @game.rating %></td>
-                            
-                            </tr>
-                             <tr>
-                                <td><strong>Age Group</strong></td>
-                                <td><%= @game.age_group %></td>
-                            
-                            </tr>
-                            <tr>
-                                <td><strong>Posted by:</strong></td>
-                                <td><%= @game.user.name %></td>
-                            
-                            </tr>
-                        </tbody>
-                    </table>
-                    <%= link_to "Write a Review of this game", new_game_review_path(@game) %>
+
+                                 <td><h1><%= @game.name %></h1</td>
+                            <div id="image">
+                            <%= image_tag  @game.image.url %>
+
+
+                                     </div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Name</strong></td>
+                                            <td><%= @game.name %></td>
+
+                                        </tr>
+                                         <tr>
+                                            <td><strong>About</strong></td>
+                                            <td><%= @game.about %></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Price</strong></td>
+                                            <td><%= @game.price %></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Rating</strong></td>
+                                            <td><%= @game.rating %></td>
+
+                                        </tr>
+                                         <tr>
+                                            <td><strong>Age Group</strong></td>
+                                            <td><%= @game.age_group %></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Posted by:</strong></td>
+                                            <td><%= @game.user.name %></td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h3>
+                                <%= link_to "Write a Review of this game", new_game_review_path(@game) %>
+                                    </h3>
+                            </div>
+                        </div>
+                                     <div class="col-md-5 cold-md-offset-1">
+                                            </br>
+                             <h1 class="review_title">Reviews</h1>
+
+
+
+                                        <% if @reviews.blank? %>
+                      <h3>No reviews just yet, would you like to add the first!</h3>
+                      <%= link_to "Write Review", new_game_review_path(@game), class: "btn btn-danger" %>
+                    <% else %>
+
+
+                      <% @reviews.each do |review| %>
+                                      </br>
+                        </br>
+                                          </br>
+                        <p><strong><%= review.user.name %></strong></p>
+                             <div class="reviews">
+                          <div class="star-rating",  data-score= <%= review.rating %> ></div>
+                                        <p><%= review.comment %></p>
+                            </div>
+
+                            <hr>
+                            </hr>
+
+                        </div>
+                      <% end %>
+                    <% end %>
+
+
+                    </div>
+
                 </div>
             </div>
-                         <div class="col-md-7 cold-md-offset-1">
-                                </br>
-                 <h1 class="review_title">Reviews</h1>
-                             
-                             
-                             
-                            <% if @reviews.blank? %>
-          <h3>No reviews just yet, would you like to add the first!</h3>
-          <%= link_to "Write Review", new_game_review_path(@game), class: "btn btn-danger" %>
-        <% else %>
-        
-
-          <% @reviews.each do |review| %>
-                          </br>
-            </br>
-                              </br>
-            <p><strong><%= review.user.name %></strong></p>
-                 <div class="reviews">
-              <div class="star-rating",  data-score= <%= review.rating %> ></div>
-                            <p><%= review.comment %></p>
-                </div>
-
-                <hr>
-                </hr>
-                
-            </div>
-          <% end %>
-        <% end %>
-                             <%= link_to 'Back', root_path(@game) %>
-        </div>
-        
-    </div>
-</div>
 
 
+            <%= link_to 'Edit |', edit_game_path(@game) %>       
+            <%= link_to 'Back ', root_path(@game) %>
 
-<script>
-    $('.star-rating').raty({
-      path: '/assets/',
-      readOnly: true,
-      score: function() {
-            return $(this).attr('data-score');
-    }
-  });
-</script>
+
+            <script>
+                $('.star-rating').raty({
+                  path: '/assets/',
+                  readOnly: true,
+                  score: function() {
+                        return $(this).attr('data-score');
+                }
+              });
+            </script>
 
 
 
