@@ -16,7 +16,7 @@
         @user = User.new(secure_params)
         if @user.save
              remember @user       #  NEW LINE
-      flash[:success] = "Welcome to the games emporium!"    # NEW LINE
+      flash[:success] = "Welcome to Davids Game Review Site"    # NEW LINE
            redirect_to @user
         else
  render 'new' 
