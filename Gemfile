@@ -9,9 +9,12 @@ source 'http://rubygems.org'
    gem 'bcrypt',    '3.1.11'
     gem 'turbolinks',   '5.0.0'
     gem 'jbuilder',     '2.4.1'
+
     gem 'bootstrap-sass',    '3.3.6' 
     gem 'searchkick', '~> 2.0'
+    gem 'aws-sdk', '< 2.0'
     gem 'paperclip', '~> 5.1'
+    gem 'figaro'
     gem 'cocaine', '~> 0.5.8'
     group :development, :test do
       gem 'sqlite3', '1.3.11'
@@ -22,6 +25,7 @@ source 'http://rubygems.org'
     group :development do
       gem 'web-console',           '3.1.1'
       gem 'listen',                '3.0.8'
+        
       gem 'spring',                '1.7.2'
       gem 'spring-watcher-listen', '2.0.0'
     end
