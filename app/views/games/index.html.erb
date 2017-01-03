@@ -1,33 +1,37 @@
 <% if !logged_in? %>
 <div class="row">
 <div class="jumbotron">
-    </br>
-    </br>
-</br>
- </br>
-    </br>
-</br> </br>
-    </br>
-</br>
+    
     <h1>Please sign in if you would like to add games</h1>
     <p>If you would like to be a part of our great community here at Davids Ruby project then, sign up and add a game of your own.  If you don't feel like adding a game then just browse our great range of games</p>
    </p>
   </div>
 <% end %>
-    </br>
 </br>
-
+<h1>All Games Reviewed</h1>
 
   <% @games.each do |game| %>
  
-    <div class="col-sm-6 col-md-3">
+    
       <div class="thumbnail">
-          <%= link_to 'Delete | ', game, method: :delete, data: { confirm: 'Are you sure?' }%>
-          <%= link_to 'Edit |', edit_game_path(game) %>
-          <%= link_to 'Show ', game %>
+          <div align="center">
+              <h1>
+  <%= link_to game.name, game %>
+                  </h1>
+
+      
           
         <%= link_to (image_tag game.image.url, class: 'image'), game %>
-      </div>
+              </div>
+              <%= link_to 'Delete | ', game, method: :delete, data: { confirm: 'Are you sure?' }%>
+          <%= button_to "Edit The Game", edit_game_path(game), class: "btn btn-primary", :method => "get" %>
+          <%= button_to "Show Information About The Game", game, class: "btn btn-primary", :method => "get" %>
+          <%= button_to 'Delete | ', game, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary"%>
+         
+         
+          <%= link_to 'Edit |', edit_game_path(game) %>
+          <%= link_to 'Show ', game %>
+      
     </div>
   <% end %>
 </div>
