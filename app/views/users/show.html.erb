@@ -8,9 +8,34 @@
             </br>
           </br>
           <h1>
+           <strong>User Information</strong>
            
-            <%= @user.name %>
           </h1>
+         <div class="table-responsive">
+                                <table class="table">
+                    <tbody>
+                        <tr>
+                            
+                        </tr>
+                     <tr>
+                       <td><strong>Name</strong></td>
+                        <td><%= @user.name %></td>
+
+                      </tr>
+                       <tr>
+                     <td><strong>Email</strong></td>
+                    <td><%= @user.email %></td>
+                        </tr>
+                        <tr>
+                            <p> </p>
+                        </tr>
+
+                                     
+                </tbody>
+            </table>
         </section>
+        
+           
+            <%= link_to 'Back ', root_path(@game) %>
       </aside>
     </div>

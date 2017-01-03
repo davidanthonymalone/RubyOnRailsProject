@@ -1,15 +1,14 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-md-7">
-
-
+                        
                                  <td><h1><%= @game.name %></h1</td>
-                            <div id="image">
-                            <%= image_tag  @game.image.url %>
-
-
-                                     </div>
+                                     </br>
+                            
+                            <%= image_tag  @game.image.url, :size => "260x180" %>
+                                    
+                              <div class="star-rating" data-score= <%= @avg_review %> ></div>
+                            <em><%= "#{@reviews.length} reviews" %></em>
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
@@ -49,8 +48,7 @@
                                 <%= link_to "Write a Review of this game", new_game_review_path(@game) %>
                                     </h3>
                             </div>
-                        </div>
-                                     <div class="col-md-5 cold-md-offset-1">
+                        
                                             </br>
                              <h1 class="review_title">Reviews</h1>
 
@@ -75,7 +73,7 @@
                             <hr>
                             </hr>
 
-                        </div>
+                        
                       <% end %>
                     <% end %>
 

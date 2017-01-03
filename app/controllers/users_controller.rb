@@ -8,7 +8,8 @@
         @user = User.new
   
     end
-      
+      def edit
+  end
      def create
         secure_params = params.require(:user).permit(:name, :email, 
                                   :password, :password_confirmation)
