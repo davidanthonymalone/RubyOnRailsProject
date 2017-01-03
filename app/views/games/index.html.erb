@@ -23,14 +23,13 @@
           
         <%= link_to (image_tag game.image.url, class: 'image'), game %>
               </div>
-              <%= link_to 'Delete | ', game, method: :delete, data: { confirm: 'Are you sure?' }%>
+             
           <%= button_to "Edit The Game", edit_game_path(game), class: "btn btn-primary", :method => "get" %>
           <%= button_to "Show Information About The Game", game, class: "btn btn-primary", :method => "get" %>
-          <%= button_to 'Delete | ', game, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary"%>
+           <%= button_to "Review this game", new_game_review_path(game), class: "btn btn-primary", :method => "get" %>
+          <%= button_to 'Delete', game, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary"%>
          
          
-          <%= link_to 'Edit |', edit_game_path(game) %>
-          <%= link_to 'Show ', game %>
       
     </div>
   <% end %>
