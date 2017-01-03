@@ -4,7 +4,12 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
+       if logged_in? 
     @games = Game.all
+           else
+           redirect_to new_user_path,  notice: "Please register or login to use the features of this site"
+       end
+           
   end
 
   # GET /games/1
@@ -49,8 +54,7 @@ class GamesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /games/1
-  # PATCH/PUT /games/1.json
+
   def update
     respond_to do |format|
       if @game.update(game_params)
